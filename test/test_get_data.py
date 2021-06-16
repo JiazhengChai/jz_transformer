@@ -1,4 +1,4 @@
-import tensorflow_datasets as tfds
+from test import *
 
 examples, metadata = tfds.load('ted_hrlr_translate/pt_to_en', with_info=True,
                                as_supervised=True)

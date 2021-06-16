@@ -1,6 +1,4 @@
-import tensorflow as tf
-import tensorflow_datasets as tfds
-import tensorflow_text
+from test import *
 
 model_path = "../predownload/ted_hrlr_translate_pt_en_converter"
 
@@ -23,3 +21,10 @@ encoded = tokenizers.en.tokenize(en_examples)
 
 for row in encoded.to_list():
   print(row)
+
+round_trip = tokenizers.en.detokenize(encoded)
+for line in round_trip.numpy():
+  print(line.decode('utf-8'))
+
+tokens = tokenizers.en.lookup(encoded)
+print(tokens)
